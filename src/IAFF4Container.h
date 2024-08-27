@@ -67,6 +67,15 @@ public:
 	 */
 	LIBAFF4_API virtual IAFF4Resolver* getResolver()  = 0;
 
+
+	/**
+	 * Create a readable image stream for the given aff4:ImageStream resource name.
+	 *
+	 * @param resource The name of the aff4:ImageStream resource to open
+	 * @return A Stream, or NULL if segment doesn't exist or is unreadable.
+	 */
+	LIBAFF4_API virtual std::shared_ptr<IAFF4Stream> getImageStream(const std::string& resource)  = 0;
+
 	/**
 	 * Close the AFF4 Container instance.
 	 */

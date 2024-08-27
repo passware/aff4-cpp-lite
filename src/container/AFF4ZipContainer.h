@@ -85,10 +85,11 @@ public:
 	/*
 	 * From IAFF4Container
 	 */
-	std::vector<std::shared_ptr<IAFF4Image>> getImages() noexcept;
-	void setResolver(IAFF4Resolver* newResolver) noexcept;
-	IAFF4Resolver* getResolver() noexcept;
-	void close() noexcept;
+	virtual std::vector<std::shared_ptr<IAFF4Image>> getImages() noexcept override;
+	virtual void setResolver(IAFF4Resolver* newResolver) noexcept override;
+	virtual IAFF4Resolver* getResolver() noexcept override;
+	virtual void close() noexcept override;
+	virtual std::shared_ptr<IAFF4Stream> getImageStream(const std::string& resource) noexcept override;
 
 	/**
 	 * Get the RDF Model for this container.
@@ -110,14 +111,6 @@ public:
 	 * @return A Stream, or NULL if segment doesn't exist or is unreadable.
 	 */
 	LIBAFF4_API std::shared_ptr<IAFF4Stream> getSegment(const std::string& segmentName) noexcept;
-
-	/**
-	 * Create a readable image stream for the given aff4:ImageStream resource name.
-	 *
-	 * @param resource The name of the aff4:ImageStream resource to open
-	 * @return A Stream, or NULL if segment doesn't exist or is unreadable.
-	 */
-	LIBAFF4_API std::shared_ptr<IAFF4Stream> getImageStream(const std::string& resource) noexcept;
 
 	/**
 	 * Create an image object of the given resource.
