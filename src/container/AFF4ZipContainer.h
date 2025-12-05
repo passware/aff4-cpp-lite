@@ -71,16 +71,16 @@ public:
 	/*
 	 * From AFF4Resource.
 	 */
-	std::string getResourceID() const noexcept;
-	aff4::Lexicon getBaseType() noexcept;
-	std::map<aff4::Lexicon, std::vector<aff4::rdf::RDFValue>> getProperties() noexcept;
-	std::vector<aff4::rdf::RDFValue> getProperty(aff4::Lexicon resource) noexcept;
+	virtual std::string getResourceID() const noexcept override;
+	virtual aff4::Lexicon getBaseType() noexcept override;
+	virtual std::map<aff4::Lexicon, std::vector<aff4::rdf::RDFValue>> getProperties() noexcept override;
+	virtual std::vector<aff4::rdf::RDFValue> getProperty(aff4::Lexicon resource) noexcept override;
 
 	/*
 	 * From IAFF4Resolver
 	 */
-	std::shared_ptr<aff4::IAFF4Resource> open(const std::string& resource) noexcept;
-	bool hasResource(const std::string& resource) noexcept;
+	virtual std::shared_ptr<aff4::IAFF4Resource> open(const std::string& resource) noexcept override;
+	virtual bool hasResource(const std::string& resource) noexcept override;
 
 	/*
 	 * From IAFF4Container

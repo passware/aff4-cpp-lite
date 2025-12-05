@@ -99,7 +99,7 @@ aff4::Lexicon getAFF4Type(const std::string& type) {
  * @param t The tm struct.
  * @return time_t for UTC.
  */
-time_t my_timegm(register struct tm * t)
+time_t my_timegm(struct tm * t)
 /* struct tm to seconds since Unix epoch */
 {
 	long year;

@@ -75,18 +75,18 @@ public:
 	/*
 	 * From AFF4Resource.
 	 */
-	LIBAFF4_API std::string getResourceID() const noexcept;
+	virtual LIBAFF4_API std::string getResourceID() const noexcept override;
 
-	LIBAFF4_API std::map<aff4::Lexicon, std::vector<aff4::rdf::RDFValue>> getProperties() noexcept;
+	virtual LIBAFF4_API std::map<aff4::Lexicon, std::vector<aff4::rdf::RDFValue>> getProperties() noexcept override;
 
-	LIBAFF4_API std::vector<aff4::rdf::RDFValue> getProperty(aff4::Lexicon resource) noexcept;
+	virtual LIBAFF4_API std::vector<aff4::rdf::RDFValue> getProperty(aff4::Lexicon resource) noexcept override;
 
 	/*
 	 * From IAFF4Resolver
 	 */
-	LIBAFF4_API std::shared_ptr<aff4::IAFF4Resource> open(const std::string& resource) noexcept;
+	virtual LIBAFF4_API std::shared_ptr<aff4::IAFF4Resource> open(const std::string& resource) noexcept override;
 
-	LIBAFF4_API bool hasResource(const std::string& resource) noexcept;
+	virtual LIBAFF4_API bool hasResource(const std::string& resource) noexcept override;
 
 private:
 	/**

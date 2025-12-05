@@ -77,15 +77,15 @@ public:
 	/*
 	 * From AFF4Resource.
 	 */
-	std::string getResourceID() const noexcept;
-	aff4::Lexicon getBaseType() noexcept;
-	std::map<aff4::Lexicon, std::vector<aff4::rdf::RDFValue>> getProperties() noexcept;
-	std::vector<aff4::rdf::RDFValue> getProperty(aff4::Lexicon resource) noexcept;
+	virtual std::string getResourceID() const noexcept override;
+	virtual aff4::Lexicon getBaseType() noexcept override;
+	virtual std::map<aff4::Lexicon, std::vector<aff4::rdf::RDFValue>> getProperties() noexcept override;
+	virtual std::vector<aff4::rdf::RDFValue> getProperty(aff4::Lexicon resource) noexcept override;
 
 	/*
 	 * From IAFF4Image
 	 */
-	std::shared_ptr<IAFF4Map> getMap() noexcept;
+	virtual std::shared_ptr<IAFF4Map> getMap() noexcept override;
 
 private:
 	/**
